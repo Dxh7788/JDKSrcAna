@@ -16,7 +16,7 @@ public class DMapTest {
         dMap.put(10, 10);
         dMap.put(11, 11);
         dMap.put(12, 12);
-
+        dMap.put(13, 13);
         System.out.println(dMap.get(12));
     }
 }
