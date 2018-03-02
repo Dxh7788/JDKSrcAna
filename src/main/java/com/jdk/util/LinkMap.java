@@ -43,6 +43,7 @@ public class LinkMap {
             }
             map = map.next;
         }
+
         ro = map.object;
         LinkMap map1 = this;
         while (null != map1){
