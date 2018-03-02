@@ -13,10 +13,10 @@ public class DMapTest {
     @Test
     public void test(){
         DMap dMap = new DMap();
-        dMap.put(10, 100);
-        dMap.put(11, 100);
-        dMap.put(12, 100);
+        dMap.put(10, 10);
+        dMap.put(11, 11);
+        dMap.put(12, 12);
 
-        System.out.println(dMap.get(11));
+        System.out.println(dMap.get(12));
     }
 }
