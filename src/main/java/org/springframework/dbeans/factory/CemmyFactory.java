@@ -24,7 +24,7 @@ public class CemmyFactory implements FactoryBean<Object>,InitializingBean,BeanNa
 
     }
 
-    public void destory() {
+    public void destroy() {
 
     }
 }
