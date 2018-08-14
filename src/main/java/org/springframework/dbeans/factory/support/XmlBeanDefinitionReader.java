@@ -3,6 +3,9 @@ package org.springframework.dbeans.factory.support;
 import org.springframework.dcore.io.Resource;
 import org.springframework.dcore.io.ResourceLoader;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -51,6 +54,22 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
     }
 
     private int registerBeanDefinitions(Document doc, Resource resource) {
+        //resource用来创建上下文,doc用来解析成bean
+        NodeList nodeList = doc.getChildNodes();
+        for (int i=0;i<nodeList.getLength();i++){
+            Node node = nodeList.item(i);
+            if (node instanceof Element){
+                Element ele = (Element) node;
+                System.out.println(ele.getNodeName());
+                NodeList subNodeList = ele.getChildNodes();
+                for (int j=0;j<subNodeList.getLength();j++){
+                    Node subNode = subNodeList.item(j);
+                    if (subNode instanceof Element){
+                        System.out.println(((Element)subNode).getNodeName());
+                    }
+                }
+            }
+        }
         return 0;
     }
 }
