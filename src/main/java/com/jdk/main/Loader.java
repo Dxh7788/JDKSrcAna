@@ -1,10 +1,8 @@
 package com.jdk.main;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.util.Enumeration;
-import java.util.Properties;
 
 /**
  * @author xh.d
@@ -22,10 +20,15 @@ public class Loader {
                 }
             }
         }
-        InputStream inputStream = c1.getResourceAsStream("META-INF/anioj.handlers");
-        Properties properties = new Properties();
-        properties.load(inputStream);
-        System.out.println(properties.size());
+        //getResources会找到所有以name结尾的文件,是全局搜索
+        Enumeration<URL> resources = c1.getResources("META-INF/anioj.handlers");
+        int count = 0;
+        while (resources.hasMoreElements()){
+            count++;
+            URL url = resources.nextElement();
+            System.out.println(url.getFile());
+        }
+        System.out.println("共有"+count+"个元素!!!");
     }
 
     public static void main(String[] args) throws IOException {
