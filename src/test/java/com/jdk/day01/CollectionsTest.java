@@ -14,6 +14,7 @@ public class CollectionsTest {
 
     @Test
     public void newSetFromMapTest(){
+        //使用newSetFromMap保证线程安全
         Set<String> exists = Collections.newSetFromMap(new HashMap<String,Boolean>());
         exists.add("kk");
         exists.add("dxh");
