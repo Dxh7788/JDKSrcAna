@@ -78,6 +78,8 @@ public class Loader {
             System.out.println("instanceof abstract true");
         }
         if (baseClass instanceof BaseInterface){
+            BaseInterface baseInterface = BaseInterface.class.cast(baseClass);
+            baseInterface.vbn("interface");
             System.out.println("instanceof Interface true");
         }
     }
