@@ -3,14 +3,13 @@ package com.jdk.main;
 import com.jdk.BaseClass;
 import com.jdk.BaseInterface;
 import com.jdk.DefaultBaseClass;
+import com.jdk.reflect.User;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.Enumeration;
-import java.util.Properties;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author xh.d
@@ -69,7 +68,18 @@ public class Loader {
         Loader loader = new Loader();
         loader.load();
         loader.checkInstanceOf();
+        //测试java引用处理
+        loader.checkRef();
 
+    }
+
+    private void checkRef() {
+        Map<String,User> map = new HashMap<String, User>(0);
+        map.put("key",new User());
+        User user = map.get("key");
+        System.out.println(user.getName());
+        user.setName("dxh");
+        System.out.println(map.get("key").getName());
     }
 
     public void checkInstanceOf(){

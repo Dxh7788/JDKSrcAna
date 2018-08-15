@@ -8,7 +8,7 @@ package com.jdk.reflect;
  * @since 2018/8/6 12:12
  */
 public class Common<T> {
-    public User<?> getCommon(){
+    public User getCommon(){
         return new User();
     }
 }
