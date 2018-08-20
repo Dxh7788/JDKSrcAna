@@ -1,12 +1,14 @@
 package com.jdk.ana;
 
+import com.jdk.BaseInterface;
+
 /**
  * Copyright (C) 2017-2018 https://www.htouhui.com - A project by JDKSrcAna
  *
  * @author xh.d
  * @since 2018/3/2 11:27
  */
-public class ByteAna {
+public class ByteAna  implements BaseInterface{
 
     public static void main(String[] args) {
         //Byte的机制和Integer基本一致,区别在于:
@@ -14,5 +16,10 @@ public class ByteAna {
         //没有highestOneBit和lowestOneBit方法
         //Byte的位数为8,可以通过Size获取
         System.out.println(Byte.SIZE);
+    }
+
+    @Override
+    public void vbn(String name) {
+
     }
 }
