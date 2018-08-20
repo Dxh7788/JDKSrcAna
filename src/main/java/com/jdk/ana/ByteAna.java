@@ -8,6 +8,7 @@ import com.jdk.BaseInterface;
  * @author xh.d
  * @since 2018/3/2 11:27
  */
+@VisitorTest
 public class ByteAna  implements BaseInterface{
 
     public static void main(String[] args) {
@@ -18,6 +19,7 @@ public class ByteAna  implements BaseInterface{
         System.out.println(Byte.SIZE);
     }
 
+    @VisitorTest
     @Override
     public void vbn(String name) {
 
